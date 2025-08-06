@@ -671,9 +671,7 @@ body.dark-mode .hero-buttons .btn-secondary {
 }
 
 .contact-items {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+    display: block;
     margin-top: 1.5rem;
 }
 .contact-item {
@@ -682,6 +680,7 @@ body.dark-mode .hero-buttons .btn-secondary {
     gap: 0.7rem;
     font-size: 1.1rem;
     color: var(--text-primary);
+    margin-bottom: 1rem;
 }
 .contact-item i {
     font-size: 1.3rem;
