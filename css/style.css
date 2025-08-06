@@ -1028,3 +1028,48 @@ body.dark-mode .nav-logo-link {
     color: var(--primary-color) !important;
     text-shadow: 0 2px 8px #000;
 }
+
+.contact-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.contact-card {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 2rem;
+    min-width: 220px;
+    transition: box-shadow 0.3s, background 0.3s;
+}
+.contact-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+.contact-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+.contact-card a {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    text-decoration: underline;
+    font-weight: 500;
+}
+.contact-card:hover {
+    box-shadow: var(--shadow-lg);
+    background: var(--bg-primary);
+}
+body.dark-mode .contact-card {
+    background: #23272a;
+    color: var(--primary-color);
+}
+body.dark-mode .contact-card a {
+    color: var(--primary-color);
+}
