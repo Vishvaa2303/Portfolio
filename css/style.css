@@ -46,15 +46,94 @@ body.dark-mode {
     --text-primary: #f8fafc;
     --text-secondary: #cbd5e1;
     --text-light: #f8fafc;
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-dark: #020617;
+    --bg-primary: #181a1b;
+    --bg-secondary: #23272a;
+    --bg-dark: #111214;
     --border-color: #334155;
+    background: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
 }
 
-body.dark-mode {
-    background: var(--bg-primary);
+body.dark-mode .navbar {
+    background: rgba(24, 26, 27, 0.98);
+    border-bottom: 1px solid var(--border-color);
+}
+
+body.dark-mode .nav-link,
+body.dark-mode .nav-logo a {
+    color: var(--text-light);
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+    color: var(--primary-color);
+}
+
+body.dark-mode .btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #222;
+}
+
+body.dark-mode .btn-secondary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+body.dark-mode .btn-secondary:hover {
+    background: var(--primary-color);
+    color: #222;
+}
+
+body.dark-mode .section-title::after {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+}
+
+body.dark-mode .project-card {
+    background: var(--bg-secondary);
     color: var(--text-primary);
+}
+
+body.dark-mode .project-card:hover {
+    box-shadow: 0 10px 24px 0 rgba(251,191,36,0.15);
+}
+
+body.dark-mode .footer {
+    background: var(--bg-dark);
+    color: var(--text-light);
+}
+
+body.dark-mode .rpa-bot {
+    background: var(--primary-color);
+    box-shadow: 0 4px 24px 0 rgba(37,99,235,0.25);
+}
+
+body.dark-mode .contact-form,
+body.dark-mode .skill-category {
+    background: #23272a;
+    color: var(--text-light);
+}
+
+body.dark-mode .about,
+body.dark-mode .skills,
+body.dark-mode .projects,
+body.dark-mode .experience,
+body.dark-mode .achievements,
+body.dark-mode .certifications,
+body.dark-mode .contact {
+    background: var(--bg-primary);
+    color: var(--text-light);
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+    background: #23272a;
+    color: var(--text-light);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus {
+    border-color: var(--primary-color);
 }
 
 .container {
@@ -171,11 +250,24 @@ body.dark-mode .btn-secondary:hover {
     height: 70px;
 }
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .nav-logo a {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-primary);
     text-decoration: none;
+}
+
+.batman-logo {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .nav-menu {
