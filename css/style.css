@@ -878,6 +878,125 @@ body.dark-mode .contact-card a {
     text-decoration: underline;
 }
 
+/* --- Custom sections for new portfolio layout --- */
+
+.skills-groups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.skills-group {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    padding: 2rem 2rem 1.5rem 2rem;
+    min-width: 260px;
+    flex: 1 1 280px;
+    max-width: 350px;
+}
+.skills-group h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.skills-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1rem;
+}
+.skills-list li:last-child {
+    border-bottom: none;
+}
+.skill-level {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 2px 10px;
+    margin-left: 1rem;
+}
+
+.about-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin: 2rem 0 1rem 0;
+}
+.about-value {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    padding: 1.2rem 1.5rem;
+    min-width: 180px;
+    max-width: 240px;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+.about-value i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.certifications-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.cert-card {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem 2rem;
+    min-width: 240px;
+    max-width: 320px;
+    flex: 1 1 260px;
+    margin-bottom: 1rem;
+}
+.cert-card h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.cert-year {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    margin-left: 0.5rem;
+}
+.cert-meta {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
+}
+
+.emoji-end {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 2.5rem 0 1.5rem 0;
+    opacity: 0.85;
+}
+
 @media (max-width: 600px) {
     .contact-cards {
         flex-direction: column;
