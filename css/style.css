@@ -386,6 +386,33 @@ body.dark-mode .btn-secondary:hover {
     object-fit: cover;
 }
 
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #181a1b 0%, #23272a 100%) !important;
+}
+body.dark-mode .hero-title,
+body.dark-mode .hero-subtitle,
+body.dark-mode .hero-description {
+    color: var(--text-light) !important;
+    text-shadow: 0 2px 8px #000a;
+}
+body.dark-mode .hero-title .text-gradient {
+    -webkit-text-fill-color: var(--primary-color) !important;
+    background: none !important;
+    color: var(--primary-color) !important;
+    text-shadow: 0 2px 8px #000a;
+}
+body.dark-mode .hero-buttons .btn-primary,
+body.dark-mode .hero-buttons .btn-secondary {
+    color: #181a1b !important;
+    background: var(--primary-color) !important;
+    border: none;
+}
+body.dark-mode .hero-buttons .btn-secondary {
+    background: transparent !important;
+    color: var(--primary-color) !important;
+    border: 2px solid var(--primary-color) !important;
+}
+
 /* About Section */
 .about {
     padding: 100px 0;
@@ -649,178 +676,220 @@ body.dark-mode .btn-secondary:hover {
 
 .contact-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    color: var(--text-secondary);
+    min-width: 180px;
+    padding: 1.2rem 1.5rem;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07);
+    background: var(--bg-secondary);
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.contact-item i {
-    color: var(--primary-color);
-    width: 20px;
+.contact-item:hover {
+    transform: translateY(-6px) scale(1.04) rotate(-1deg);
+    box-shadow: 0 8px 32px 0 rgba(37,99,235,0.13);
+    z-index: 2;
 }
 
-.social-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-link {
-    color: var(--text-secondary);
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.social-link:hover {
-    color: var(--primary-color);
-    transform: translateY(-2px);
-}
-
-.contact-form {
-    background: white;
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-sm);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border: 2px solid var(--border-color);
-    border-radius: var(--border-radius);
-    font-family: inherit;
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
-/* Footer */
-.footer {
-    background: var(--bg-dark);
-    color: var(--text-light);
-    text-align: center;
-    padding: 2rem 0;
-}
-
-body.dark-mode .footer {
-    background: var(--bg-dark);
-    color: var(--text-light);
-}
-
-/* Floating RPA Bot Icon */
-.rpa-bot {
-    position: fixed;
-    bottom: 32px;
-    right: 32px;
-    width: 60px;
-    height: 60px;
-    background: var(--rpa-bot-color);
-    border-radius: 50%;
-    box-shadow: var(--rpa-bot-shadow);
+.icon-bg {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2000;
-    cursor: pointer;
-    animation: floatBot 2.5s ease-in-out infinite alternate;
-}
-.rpa-bot svg {
-    width: 36px;
-    height: 36px;
-}
-@keyframes floatBot {
-    from { transform: translateY(0); }
-    to { transform: translateY(-18px); }
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-bottom: 0.7rem;
+    font-size: 2rem;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
 }
 
-body.dark-mode .rpa-bot {
-    background: var(--primary-color);
-    box-shadow: 0 4px 24px 0 rgba(37,99,235,0.25);
+.unique-email .icon-bg {
+    background: linear-gradient(135deg, #2563eb 60%, #06b6d4 100%);
+    color: #fff;
 }
 
-/* Experience Section */
-.experience {
-    padding: 100px 0;
-    background: var(--bg-primary);
+.unique-phone .icon-bg {
+    background: linear-gradient(135deg, #fbbf24 60%, #f59e42 100%);
+    color: #222;
 }
-.experience-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    max-width: 800px;
-    margin: 0 auto;
+
+.unique-linkedin .icon-bg {
+    background: linear-gradient(135deg, #0a66c2 60%, #004182 100%);
+    color: #fff;
 }
-.experience-card {
-    background: var(--bg-secondary);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-md);
-    padding: 2.5rem 2rem;
-    transition: box-shadow 0.3s;
-    position: relative;
+
+.contact-label {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
 }
-.experience-card:hover {
-    box-shadow: var(--shadow-lg);
+
+.contact-value {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    word-break: break-all;
+    text-align: center;
 }
-.experience-header {
+
+.unique-linkedin .contact-value a {
+    color: #0a66c2;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+body.dark-mode .contact-item {
+    background: #23272a;
+    color: var(--primary-color);
+}
+
+body.dark-mode .contact-label {
+    color: var(--primary-color);
+}
+
+body.dark-mode .contact-value,
+body.dark-mode .contact-value a {
+    color: var(--text-light);
+}
+
+body.dark-mode .unique-linkedin .contact-value a {
+    color: #4ea3f7;
+}
+
+.unique-contact-items {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 1.5rem;
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-.exp-role {
-    color: var(--primary-color);
-}
-.exp-level {
-    color: var(--text-secondary);
-    font-size: 1rem;
-    font-weight: 400;
-    margin-left: 0.5rem;
-}
-.exp-company {
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-.experience-meta {
-    display: flex;
     gap: 2rem;
-    color: var(--text-secondary);
-    font-size: 1rem;
-    margin-bottom: 1.2rem;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
 }
-.experience-meta i {
+
+.contact-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.contact-card {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 2rem;
+    min-width: 220px;
+    transition: box-shadow 0.3s, background 0.3s;
+}
+.contact-card i {
+    font-size: 2rem;
     color: var(--primary-color);
-    margin-right: 0.4rem;
 }
-.exp-list, .exp-subsection ul {
-    margin: 0 0 1.2rem 1.2rem;
-    padding: 0;
-    list-style: disc inside;
-    color: var(--text-primary);
-    font-size: 1.05rem;
-    line-height: 1.7;
-}
-.exp-subsection {
-    margin-top: 1.2rem;
-    color: var(--text-secondary);
+.contact-label {
     font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
 }
+.contact-card a {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    text-decoration: underline;
+    font-weight: 500;
+}
+.contact-card:hover {
+    box-shadow: var(--shadow-lg);
+    background: var(--bg-primary);
+}
+body.dark-mode .contact-card {
+    background: #23272a;
+    color: var(--primary-color);
+}
+body.dark-mode .contact-card a {
+    color: var(--primary-color);
+}
+
+.email-card {
+    background: linear-gradient(135deg, #2563eb 60%, #06b6d4 100%);
+    color: #fff;
+    border-left: 6px solid #fff;
+    box-shadow: 0 4px 24px 0 rgba(37,99,235,0.10);
+}
+.email-card .icon-wrap {
+    background: #fff;
+    color: #2563eb;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin-right: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.email-card a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.phone-card {
+    background: linear-gradient(135deg, #fbbf24 60%, #f59e42 100%);
+    color: #222;
+    border-left: 6px solid #fffbe7;
+    box-shadow: 0 4px 24px 0 rgba(251,191,36,0.10);
+}
+.phone-card .icon-wrap {
+    background: #fffbe7;
+    color: #f59e42;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin-right: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.phone-card a {
+    color: #222;
+    text-decoration: underline;
+}
+
+.linkedin-card {
+    background: linear-gradient(135deg, #0a66c2 60%, #004182 100%);
+    color: #fff;
+    border-left: 6px solid #fff;
+    box-shadow: 0 4px 24px 0 rgba(10,102,194,0.10);
+}
+.linkedin-card .icon-wrap {
+    background: #fff;
+    color: #0a66c2;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin-right: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.linkedin-card a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .contact-cards {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .unique-contact-items {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: stretch;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
@@ -1027,119 +1096,4 @@ body.dark-mode .top-contact-bar a {
 body.dark-mode .nav-logo-link {
     color: var(--primary-color) !important;
     text-shadow: 0 2px 8px #000;
-}
-
-.contact-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-.contact-card {
-    background: var(--bg-secondary);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-sm);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.2rem 2rem;
-    min-width: 220px;
-    transition: box-shadow 0.3s, background 0.3s;
-}
-.contact-card i {
-    font-size: 2rem;
-    color: var(--primary-color);
-}
-.contact-label {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    font-weight: 600;
-    margin-bottom: 0.2rem;
-}
-.contact-card a {
-    color: var(--text-primary);
-    font-size: 1.1rem;
-    text-decoration: underline;
-    font-weight: 500;
-}
-.contact-card:hover {
-    box-shadow: var(--shadow-lg);
-    background: var(--bg-primary);
-}
-body.dark-mode .contact-card {
-    background: #23272a;
-    color: var(--primary-color);
-}
-body.dark-mode .contact-card a {
-    color: var(--primary-color);
-}
-
-.email-card {
-    background: linear-gradient(135deg, #2563eb 60%, #06b6d4 100%);
-    color: #fff;
-    border-left: 6px solid #fff;
-    box-shadow: 0 4px 24px 0 rgba(37,99,235,0.10);
-}
-.email-card .icon-wrap {
-    background: #fff;
-    color: #2563eb;
-    border-radius: 50%;
-    padding: 0.5rem;
-    margin-right: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.email-card a {
-    color: #fff;
-    text-decoration: underline;
-}
-
-.phone-card {
-    background: linear-gradient(135deg, #fbbf24 60%, #f59e42 100%);
-    color: #222;
-    border-left: 6px solid #fffbe7;
-    box-shadow: 0 4px 24px 0 rgba(251,191,36,0.10);
-}
-.phone-card .icon-wrap {
-    background: #fffbe7;
-    color: #f59e42;
-    border-radius: 50%;
-    padding: 0.5rem;
-    margin-right: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.phone-card a {
-    color: #222;
-    text-decoration: underline;
-}
-
-.linkedin-card {
-    background: linear-gradient(135deg, #0a66c2 60%, #004182 100%);
-    color: #fff;
-    border-left: 6px solid #fff;
-    box-shadow: 0 4px 24px 0 rgba(10,102,194,0.10);
-}
-.linkedin-card .icon-wrap {
-    background: #fff;
-    color: #0a66c2;
-    border-radius: 50%;
-    padding: 0.5rem;
-    margin-right: 0.7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.linkedin-card a {
-    color: #fff;
-    text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-    .contact-cards {
-        flex-direction: column;
-        gap: 1.2rem;
-    }
 }
