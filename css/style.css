@@ -1073,3 +1073,73 @@ body.dark-mode .contact-card {
 body.dark-mode .contact-card a {
     color: var(--primary-color);
 }
+
+.email-card {
+    background: linear-gradient(135deg, #2563eb 60%, #06b6d4 100%);
+    color: #fff;
+    border-left: 6px solid #fff;
+    box-shadow: 0 4px 24px 0 rgba(37,99,235,0.10);
+}
+.email-card .icon-wrap {
+    background: #fff;
+    color: #2563eb;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin-right: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.email-card a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.phone-card {
+    background: linear-gradient(135deg, #fbbf24 60%, #f59e42 100%);
+    color: #222;
+    border-left: 6px solid #fffbe7;
+    box-shadow: 0 4px 24px 0 rgba(251,191,36,0.10);
+}
+.phone-card .icon-wrap {
+    background: #fffbe7;
+    color: #f59e42;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin-right: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.phone-card a {
+    color: #222;
+    text-decoration: underline;
+}
+
+.linkedin-card {
+    background: linear-gradient(135deg, #0a66c2 60%, #004182 100%);
+    color: #fff;
+    border-left: 6px solid #fff;
+    box-shadow: 0 4px 24px 0 rgba(10,102,194,0.10);
+}
+.linkedin-card .icon-wrap {
+    background: #fff;
+    color: #0a66c2;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin-right: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.linkedin-card a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .contact-cards {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+}
