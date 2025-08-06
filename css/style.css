@@ -657,7 +657,78 @@ body.dark-mode .rpa-bot {
     box-shadow: 0 4px 24px 0 rgba(37,99,235,0.25);
 }
 
-/* Responsive Design */
+/* Experience Section */
+.experience {
+    padding: 100px 0;
+    background: var(--bg-primary);
+}
+.experience-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.experience-card {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: 2.5rem 2rem;
+    transition: box-shadow 0.3s;
+    position: relative;
+}
+.experience-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+.experience-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.exp-role {
+    color: var(--primary-color);
+}
+.exp-level {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 0.5rem;
+}
+.exp-company {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.experience-meta {
+    display: flex;
+    gap: 2rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+}
+.experience-meta i {
+    color: var(--primary-color);
+    margin-right: 0.4rem;
+}
+.exp-list, .exp-subsection ul {
+    margin: 0 0 1.2rem 1.2rem;
+    padding: 0;
+    list-style: disc inside;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+.exp-subsection {
+    margin-top: 1.2rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
@@ -731,6 +802,14 @@ body.dark-mode .rpa-bot {
 
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .experience-cards {
+        padding: 0 0.5rem;
+    }
+
+    .experience-card {
+        padding: 1.5rem 1rem;
     }
 }
 
