@@ -981,3 +981,50 @@ body.dark-mode .rpa-bot {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-color);
 }
+
+/* Top Contact Bar */
+.top-contact-bar {
+    width: 100%;
+    background: var(--primary-color);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    z-index: 2001;
+    position: relative;
+}
+.top-contact-bar .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.top-contact-bar a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+.top-contact-bar a:hover {
+    color: var(--accent-color);
+}
+body.dark-mode .top-contact-bar {
+    background: #181a1b;
+    color: var(--primary-color);
+}
+body.dark-mode .top-contact-bar a {
+    color: var(--primary-color);
+}
+
+.nav-logo-link {
+    color: var(--text-primary) !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+body.dark-mode .nav-logo-link {
+    color: var(--primary-color) !important;
+    text-shadow: 0 2px 8px #000;
+}
