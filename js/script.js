@@ -365,6 +365,65 @@ document.querySelectorAll('.project-image img').forEach(img => {
     });
 });
 
+// Animated skill bars for RPA/UiPath
+const skillData = [
+    { label: 'UiPath', value: 95 },
+    { label: 'RPA Design', value: 90 },
+    { label: 'Process Analysis', value: 85 },
+    { label: 'Automation Testing', value: 80 },
+    { label: 'Python', value: 75 },
+    { label: 'SQL', value: 70 }
+];
+
+function createSkillBars() {
+    const skillsSection = document.querySelector('.skills-grid');
+    if (!skillsSection) return;
+    const rpaCategory = document.createElement('div');
+    rpaCategory.className = 'skill-category';
+    rpaCategory.innerHTML = `<h3>RPA & UiPath</h3>`;
+    skillData.forEach(skill => {
+        const bar = document.createElement('div');
+        bar.className = 'skill-bar';
+        bar.innerHTML = `
+            <div class="skill-bar-label">${skill.label}</div>
+            <div class="skill-bar-fill" style="width:0"></div>
+        `;
+        rpaCategory.appendChild(bar);
+    });
+    skillsSection.prepend(rpaCategory);
+}
+
+function animateSkillBars() {
+    const bars = document.querySelectorAll('.skill-bar-fill');
+    skillData.forEach((skill, i) => {
+        setTimeout(() => {
+            if (bars[i]) bars[i].style.width = skill.value + '%';
+        }, 400 + i * 200);
+    });
+}
+
+// Floating RPA bot icon
+function addRpaBot() {
+    if (document.querySelector('.rpa-bot')) return;
+    const bot = document.createElement('div');
+    bot.className = 'rpa-bot';
+    bot.innerHTML = `
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" fill="#fff" stroke="#fbbf24" stroke-width="4"/><ellipse cx="24" cy="28" rx="10" ry="6" fill="#fbbf24"/><circle cx="18" cy="22" r="2" fill="#222"/><circle cx="30" cy="22" r="2" fill="#222"/><rect x="20" y="32" width="8" height="2" rx="1" fill="#222"/></svg>
+    `;
+    bot.title = 'Say Hi to your RPA Bot!';
+    bot.addEventListener('click', () => {
+        showNotification('🤖 Hello! I can help automate your business processes with UiPath.');
+    });
+    document.body.appendChild(bot);
+}
+
+// On DOMContentLoaded, enhance UI
+window.addEventListener('DOMContentLoaded', () => {
+    createSkillBars();
+    setTimeout(animateSkillBars, 600);
+    addRpaBot();
+});
+
 // Initialize all animations and effects
 document.addEventListener('DOMContentLoaded', () => {
     // Add fade-in animation to sections
